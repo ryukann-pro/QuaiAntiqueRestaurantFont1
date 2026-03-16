@@ -1,30 +1,32 @@
 @import url("/node_modules/bootstrap-icons/font/bootstrap-icons.css");
 @import "custom";
 
-html{
+html {
   position: relative;
-  min-height:100%;
+  min-height: 100%;
 }
-main{
+
+main {
   margin-bottom: 270px;
 }
 
-footer.footer{
+footer.footer {
   padding: 15px;
   position: absolute;
   bottom: 0;
   width: 100%;
 }
 
-p{
+p {
   font-family: $font-family-serif;
   font-size: 18px;
 }
 
-.hero-scene{
+.hero-scene {
   position: relative;
   margin-bottom: 15px;
-  &::before{
+
+  &::before {
     content: "";
     position: absolute;
     top: 0;
@@ -33,14 +35,15 @@ p{
     height: 100%;
     background-image: url(../images/FondHeroScene.jpg);
     background-size: cover;
-    filter:brightness(0.5);
+    filter: brightness(0.5);
   }
-  *{
+
+  * {
     //Positionner les éléments enfants au-dessus du pseudo-élément ::before
     position: relative;
   }
 
-  .hero-scene-content{
+  .hero-scene-content {
 
     height: 300px;
     display: flex;
@@ -50,36 +53,50 @@ p{
   }
 }
 
-.text-justify{
+.text-justify {
   text-align: justify;
 }
 
-.image-card{
+.image-card {
   position: relative;
-  &:hover{
-    .titre-image{
+
+  &:hover {
+    .titre-image,.action-image-buttons {
       opacity: 1;
 
     }
-    img{
+
+    img {
       filter: brightness(0.3);
     }
   }
 
-  img{
+  img {
     transition: all 0.3s;
   }
 
-  .titre-image{
+  .titre-image {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all 0.3s;
+  }
+
+  .action-image-buttons {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
     opacity: 0;
     transition: all 0.3s;
   }
 }
 
-.form-label{
+.form-label {
   color: $primary;
 }
